@@ -39,8 +39,6 @@ public class MainActivity extends AppCompatActivity {
                             Log.i(mLogTag, "start receiving");
                             sock.receive(packet);//受信
                             System.out.println("UDP受信:"+new String(Arrays.copyOf(packet.getData(),packet.getLength()),"UTF-8"));//受信データの表示
-                            //TextView textView = findViewById(R.id.text);
-                            //textView.setText("UDP受信:"+new String(Arrays.copyOf(packet.getData(),packet.getLength())));
                             Log.i(mLogTag, "received");
                             sock.close();//ソケットのクローズ
                         }
@@ -48,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
                         {
                             System.out.println(e);
                             Log.i(mLogTag, "Exception");
-                            //textView.setText(e.getMessage());
                         }
                     }
                 };
